@@ -44,7 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,10 +86,22 @@
     <Content Include="ContactUs.aspx" />
     <Content Include="css\mstyles.css" />
     <Content Include="css\styles.css" />
+    <Content Include="database CS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>database CS.edmx</DependentUpon>
+      <LastGenOutput>database CS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="database CS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>database CS.edmx</DependentUpon>
+      <LastGenOutput>database CS.cs</LastGenOutput>
+    </Content>
     <Content Include="EmpAceptance.aspx" />
     <Content Include="EmpCustodyOrder.aspx" />
     <Content Include="EmpCustodyReturn.aspx" />
     <Content Include="EmpCustodyView.aspx" />
+    <Content Include="MainAboutUs.aspx" />
+    <Content Include="MainBasic.aspx" />
     <Content Include="StaffCustodyModify.aspx" />
     <Content Include="EmpHome.aspx" />
     <Content Include="fonts\Ubuntu_Condensed\UFL.txt" />
@@ -171,6 +194,24 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Custody.cs">
+      <DependentUpon>database CS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database CS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database CS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database CS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database CS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database CS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database CS.edmx</DependentUpon>
+    </Compile>
     <Compile Include="EmpAceptance.aspx.cs">
       <DependentUpon>EmpAceptance.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +239,23 @@
     </Compile>
     <Compile Include="EmpCustodyView.aspx.designer.cs">
       <DependentUpon>EmpCustodyView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>database CS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainAboutUs.aspx.cs">
+      <DependentUpon>MainAboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainAboutUs.aspx.designer.cs">
+      <DependentUpon>MainAboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainBasic.aspx.cs">
+      <DependentUpon>MainBasic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainBasic.aspx.designer.cs">
+      <DependentUpon>MainBasic.aspx</DependentUpon>
     </Compile>
     <Compile Include="StaffCustodyModify.aspx.cs">
       <DependentUpon>StaffCustodyModify.aspx</DependentUpon>
@@ -291,14 +349,28 @@
     <Compile Include="suspend.aspx.designer.cs">
       <DependentUpon>suspend.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>database CS.tt</DependentUpon>
+    </Compile>
     <Compile Include="UpperCaseFilterStream.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Emp.Master" />
     <Content Include="Admin.Master" />
+    <EntityDeploy Include="database CS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>database CS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="database CS.edmx.diagram">
+      <DependentUpon>database CS.edmx</DependentUpon>
+    </Content>
     <None Include="fonts\Ubuntu_Condensed\UbuntuCondensed-Regular.ttf" />
     <Content Include="Main.Master" />
     <Content Include="Staff.Master" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
