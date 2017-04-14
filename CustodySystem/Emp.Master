@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Emp.master.cs" Inherits="CustodySystem.Emp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="css/mstyles.css" rel="stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
+      <link href="css/mstyles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+  <div class="logo-menu-container">
+    <div class="logo">Custody System</div>
+    <div class="menu">
+      <ul>
+      <li class="nobg"><a href="EmpAceptance.aspx">قبول</a></li>
+      <li class="nobg"><a href="EmpCustodyReturn.aspx">إرجاع عهد</a></li>
+       <li class="nobg"><a href="EmpCustodyOrder.aspx">طلب عهد</a></li>
+         <li><a href="EmpCustodyView.aspx">عرض العهد</a></li>
+
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="page">
+    <div class="left-column">
+      <div class="dark-panel">
+        <div class="dark-panel-top"></div>
+        <div class="dark-panel-center">
+          <ul>
+            <li>
+              <h1>مرحبا</h1>
+            </li>
+          </ul>
+            <h1>
+                <asp:Literal ID="ltrfullName" runat="server"></asp:Literal></h1>
+            <p>
+                &nbsp;</p>
+                <asp:Button  class="button1" ID="Button1" runat="server" Text="خروج" 
+                Height="34px" Width="98px" onclick="Button1_Click" />
+                
+           
+        </div>
+        <div class="dark-panel-bottom"></div>
+      </div>
+      <div class="light-panel">
+        <div class="light-panel-top"></div>
+        <div class="light-panel-center">
+          <h1>المعلومات</h1>
+          <ul>
+            <li>
+                <asp:Literal ID="ltrName" runat="server"></asp:Literal>: الاســم</li>
+            <li></li>
+            <li></li>
+            <li></li>
+              <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+            <p>
+                &nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="right-column-content">
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        
+              <p>
+                  </p>
+        
+        </asp:ContentPlaceHolder>
+      
+      </div>
+    </div>
+  </div>
+<div class="clear"></div>
+<div class="copyrights">Copyright (c) Untitled. Design by wwww.alltemplateneeds.com . Photos by photorack.net
+  </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
